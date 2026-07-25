@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Tobya\WorkWithComposer\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WorkWithComposerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'work-with-composer';
 
     public $description = 'My command';
 
