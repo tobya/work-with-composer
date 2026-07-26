@@ -16,7 +16,7 @@
 
     protected $description = 'Add Local Repository on Local Path via link';
 
-    protected $package;
+    protected $packageName;
     protected $fullpath;
 
 
@@ -96,8 +96,8 @@
 
       private function addtoWorkWithComposer(object $repoInfo)
       {
-
-            LocalStore::set("repositories.$this->package" . ".local"  ,$repoInfo);
+            echo "\n anda echo apaglkj $this->packageName";
+            LocalStore::set("repositories.{$this->packageName}" . ".local"  ,$repoInfo);
 
             LocalStore::write();
 

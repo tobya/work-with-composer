@@ -19,7 +19,7 @@
 
           if ($this->data === null) {
               if (!file_exists($this->full_filename())) {
-                  file_put_contents($this->full_filename(), json_encode(['respositories' => []], JSON_PRETTY_PRINT));
+                  file_put_contents($this->full_filename(), json_encode(['repositories' => []], JSON_PRETTY_PRINT));
               }
                 $this->data = json_decode(file_get_contents($this->full_filename()), true);
           }
