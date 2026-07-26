@@ -4,6 +4,7 @@ namespace Tobya\WorkWithComposer;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Tobya\WorkWithComposer\Commands\AddCommentCommand;
 use Tobya\WorkWithComposer\Commands\AddLocalRepoCommand;
 use Tobya\WorkWithComposer\Commands\WorkWithComposerCommand;
 use Tobya\WorkWithComposer\Commands\RestoreRepositoryCommand;
@@ -25,6 +26,7 @@ class WorkWithComposerServiceProvider extends PackageServiceProvider
             ->hasMigration('create_work_with_composer_table')
             ->hasCommands([AddLocalRepoCommand::class,
                 RestoreProductionRepositoryCommand::class,
+               AddCommentCommand::class,
                 RestoreRepositoryCommand::class]);
     }
 }

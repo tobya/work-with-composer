@@ -4,6 +4,8 @@
 
   use Illuminate\Console\Command;
   use Illuminate\Support\Facades\Process;
+  use Tobya\WorkWithComposer\Facades\Store;
+  use Tobya\WorkWithComposer\Facades\LocalStore;
   use Symfony\Component\Console\Input\InputInterface;
   use Symfony\Component\Console\Output\OutputInterface;
   use Illuminate\Contracts\Console\PromptsForMissingInput;
@@ -14,14 +16,18 @@
 
     protected $description = 'Add Local Repository on Local Path via link';
 
+    protected $package;
+    protected $fullpath;
+
+
     public function handle(): int
     {
 
        // $packageName = $this->ask('Package Name eg. tobya/QueueStatus');
        // $dirPath = $this->ask('Full Directory Path');
 
-        $packageName = $this->argument('package');
-        $dirPath = $this->argument('fullpath');
+        $this->packageName = $this->argument('package');
+        $this->dirPath = $this->argument('fullpath');
 
 
 
@@ -39,26 +45,27 @@
         $repoInfo = (object) [
 
             'type' => 'path',
-            'url' => Str($dirPath)->replace('\\','/'),
+            'url' => Str($this->dirPath)->replace('\\','/'),
             "options" => (object)  [
                 "symlink" => true
                 ]
 
         ];
 
-        $composer->repositories->{$packageName} = $repoInfo;
+        $composer->repositories->{$this->packageName} = $repoInfo;
 
         $this->writeComposer($composer);
+        $this->addtoWorkWithComposer($repoInfo);
 
 
 
-        $this->comment('All done - Local Repo for ' . $packageName . ' has been created.');
+        $this->comment('All done - Local Repo for ' . $this->packageName . ' has been created.');
         $this->info('Don\'t forget to composer require your package');
-        $this->info('Composer require ' . $packageName);
+        $this->info('Composer require ' . $this->packageName);
 
         if ($this->confirm('Do you wish to run it now?' ,false) ){
 
-           $output = Process::run('composer require ' . $packageName, function ($in, $output) {
+           $output = Process::run('composer require ' . $this->packageName , function ($in, $output) {
 
            $this->output->write($output);
            });
@@ -87,7 +94,14 @@
 
     }
 
+      private function addtoWorkWithComposer(object $repoInfo)
+      {
 
+            LocalStore::set("repositories.$this->package" . ".local"  ,$repoInfo);
+
+            LocalStore::write();
+
+      }
 
 
   }

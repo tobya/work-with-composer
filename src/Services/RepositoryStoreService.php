@@ -5,21 +5,23 @@
   use Illuminate\Support\Arr;
   use Illuminate\Support\Collection;
 
-  class RepositoryStoreService
+  class RepositoryStoreService  extends JSONFileReader
   {
-      protected $workwithcomposer_filename = 'work-with-composer.json';
 
-      protected $data = null;
 
       public function __construct()
       {
-
+            $this->json_filename = 'work-with-composer.json';
+            parent::__construct();
       }
 
       public function load(){
 
           if ($this->data === null) {
-            $this->data = json_decode(file_get_contents(base_path($this->workwithcomposer_filename)), true);
+              if (!file_exists($this->full_filename())) {
+                  file_put_contents($this->full_filename(), json_encode(['respositories' => []], JSON_PRETTY_PRINT));
+              }
+                $this->data = json_decode(file_get_contents($this->full_filename()), true);
           }
 
           return $this;
@@ -27,7 +29,7 @@
 
       public function RepositoryList() : Collection
       {
-          $this->load();
+
 
           $list = [];
           foreach($this->data['repositories'] as $repoName => $repository){
@@ -38,11 +40,12 @@
 
       public function Repository(string $repoName) : array
       {
-          $this->load();
+
           print_r($this->data);
           return Arr::get($this->data,"repositories.$repoName",[]);
 
       }
+
 
 
 
