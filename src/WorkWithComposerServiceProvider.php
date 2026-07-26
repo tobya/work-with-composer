@@ -7,6 +7,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Tobya\WorkWithComposer\Commands\AddLocalRepoCommand;
 use Tobya\WorkWithComposer\Commands\WorkWithComposerCommand;
 use Tobya\WorkWithComposer\Commands\RestoreRepositoryCommand;
+use Tobya\WorkWithComposer\Commands\RestoreProductionRepositoryCommand;
 
 class WorkWithComposerServiceProvider extends PackageServiceProvider
 {
@@ -22,6 +23,8 @@ class WorkWithComposerServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigration('create_work_with_composer_table')
-            ->hasCommands([AddLocalRepoCommand::class, RestoreRepositoryCommand::class]);
+            ->hasCommands([AddLocalRepoCommand::class,
+                RestoreProductionRepositoryCommand::class,
+                RestoreRepositoryCommand::class]);
     }
 }
