@@ -24,7 +24,7 @@
 
       print_r($repoInfo);
 
-      Artisan::call('composer:AddLocal',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
+      $this->call('composer:AddLocal',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
 
 
 

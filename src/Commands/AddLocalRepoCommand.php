@@ -58,8 +58,10 @@
 
         if ($this->confirm('Do you wish to run it now?' ,false) ){
 
-           $output = Process::command('composer require ' . $packageName)->run();
-           $this->info($output->output());
+           $output = Process::run('composer require ' . $packageName, function ($in, $output) {
+
+           $this->output->write($output);
+           });
         }
         return self::SUCCESS;
     }

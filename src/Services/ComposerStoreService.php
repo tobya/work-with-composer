@@ -15,13 +15,13 @@
 
       public function __construct()
       {
-
+        $this->load();
       }
 
       public function load(){
 
           if ($this->data === null) {
-            $this->data = json_decode(file_get_contents($this->full_filename()), true);
+            $this->data = json_decode(file_get_contents($this->full_filename()), true,  );
           }
 
           return $this;
@@ -33,7 +33,7 @@
 
       protected function write()
       {
-          file_put_contents($this->full_filename(), json_encode($this->data, JSON_PRETTY_PRINT));
+          file_put_contents($this->full_filename(), json_encode($this->data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
           return $this;
       }
 
@@ -41,7 +41,7 @@
           return $this->data;
       }
 
-      public function get(string $key) : string
+      public function get(string $key) : mixed
       {
           return Arr::get($this->data, $key);
       }

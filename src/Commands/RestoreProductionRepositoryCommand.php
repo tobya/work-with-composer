@@ -28,6 +28,13 @@
       Composer::set("require.$reponame", $productionInfo['version']);
 
 
+      $allRepositories = Composer::get('repositories');
+      unset($allRepositories[$reponame]);
+
+      Composer::set("repositories", $allRepositories);
+
+
+
 
 
 
