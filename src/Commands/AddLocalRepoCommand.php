@@ -52,10 +52,18 @@
 
         ];
 
+
+        $existingVersion = null;
+        // extract existing value
+        if (isset($composer->require->{$this->packageName})){
+            $existingVersion = $composer->require->{$this->packageName};
+        }
+
+
         $composer->repositories->{$this->packageName} = $repoInfo;
 
         $this->writeComposer($composer);
-        $this->addtoWorkWithComposer($repoInfo);
+        $this->addtoWorkWithComposer($repoInfo,$existingVersion);
 
 
 
@@ -94,10 +102,16 @@
 
     }
 
-      private function addtoWorkWithComposer(object $repoInfo)
+      private function addtoWorkWithComposer(object $repoInfo, string | null $existingVersion )
       {
-            echo "\n anda echo apaglkj $this->packageName";
+
             LocalStore::set("repositories.{$this->packageName}" . ".local"  ,$repoInfo);
+
+
+            LocalStore::set("repositories.{$this->packageName}" . ".production.last_known_version" ,$existingVersion);
+
+
+
 
             LocalStore::write();
 

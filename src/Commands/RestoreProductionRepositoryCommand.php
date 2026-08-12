@@ -25,7 +25,7 @@
 
       $productionInfo = $repoInfo['production'];
 
-      Composer::set("require.$reponame", $productionInfo['version']);
+      Composer::set("require.$reponame", $productionInfo['last_known_version']);
 
 
       $allRepositories = Composer::get('repositories');
@@ -34,6 +34,7 @@
       Composer::set("repositories", $allRepositories);
 
 
+      $this->info('Repository restored: ' . $reponame . ' ' . $productionInfo['last_known_version']);
 
 
 
