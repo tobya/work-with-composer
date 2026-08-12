@@ -4,7 +4,7 @@
 
   use Illuminate\Support\Arr;
 
-  class ComposerStoreService
+  class ComposerStoreService extends JSONFileReader
   {
 
 
