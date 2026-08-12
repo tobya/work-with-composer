@@ -10,7 +10,7 @@
   {
     protected $signature = 'composer:restore-local';
 
-    protected $description = 'Command description';
+    protected $description = 'Creates a linked repository entry in composer.json from info in work-with-composer.json';
 
     public function handle(): void
     {
@@ -18,11 +18,10 @@
 
 
       $reponame = $this->choice('Which repository do you want to restore?', $list->toArray());
-    //  echo "\n $repoindex\n ====================== \n";
-    //  $reponame = $list[$repoindex];
+
       $repoInfo = Store::Repository($reponame);
 
-      print_r($repoInfo);
+
 
       $this->call('composer:AddLocal',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
 

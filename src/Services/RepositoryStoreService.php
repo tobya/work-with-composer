@@ -41,7 +41,7 @@
       public function Repository(string $repoName) : array
       {
 
-          print_r($this->data);
+
           return Arr::get($this->data,"repositories.$repoName",[]);
 
       }
