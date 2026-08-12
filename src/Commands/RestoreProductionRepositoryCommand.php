@@ -4,6 +4,7 @@
 
   use Illuminate\Console\Command;
   use Illuminate\Support\Facades\Artisan;
+  use Illuminate\Support\Facades\Process;
   use Tobya\WorkWithComposer\Facades\Store;
   use Tobya\WorkWithComposer\Facades\Composer;
 
@@ -37,6 +38,16 @@
       $this->info('Repository restored: ' . $reponame . ' ' . $productionInfo['last_known_version']);
 
 
+        $this->info('Don\'t forget to composer require your package');
+        $this->info('Composer require ' . $reponame);
+
+        if ($this->confirm('Do you wish to run composer require now?' ,false) ){
+
+           $output = Process::run('composer require ' . $reponame , function ($in, $output) {
+
+           $this->output->write($output);
+           });
+        }
 
 
 
