@@ -12,7 +12,7 @@
 
   class AddLocalRepoCommand extends Command implements PromptsForMissingInput
   {
-    protected $signature = 'composer:AddLocal {package} {fullpath}';
+    protected $signature = 'composer:add-local {package} {fullpath}';
 
     protected $description = 'Add Local Repository on Local Path via link';
 

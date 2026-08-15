@@ -1,6 +1,6 @@
 {
     "name": "tobya/work-with-composer",
-    "description": "This is my package work-with-composer",
+    "description": "Work-with-composer provides a basic set of tools for working with local repositories",
     "keywords": [
         "Tobya",
         "laravel",
