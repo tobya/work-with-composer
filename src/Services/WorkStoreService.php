@@ -5,7 +5,7 @@
   use Illuminate\Support\Arr;
   use Illuminate\Support\Collection;
 
-  class RepositoryStoreService  extends JSONFileReader
+  class WorkStoreService  extends JSONFileReader
   {
 
 
