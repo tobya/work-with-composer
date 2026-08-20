@@ -23,10 +23,11 @@ class WorkWithComposerServiceProvider extends PackageServiceProvider
             ->name('work-with-composer')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_work_with_composer_table')
-            ->hasCommands([AddLocalRepoCommand::class,
+            ->hasCommands([
+                AddCommentCommand::class,
+                AddLocalRepoCommand::class,
+                RestoreRepositoryCommand::class,
                 RestoreProductionRepositoryCommand::class,
-               AddCommentCommand::class,
-                RestoreRepositoryCommand::class]);
+            ]);
     }
 }
