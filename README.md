@@ -28,7 +28,7 @@ php artisan vendor:publish --tag="work-with-composer-config"
 Add a new local repository
 ```php
 
-php artisan composer:addlocal
+php artisan composer:add-local
 
 ```
 
