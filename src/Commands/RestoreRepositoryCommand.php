@@ -23,7 +23,7 @@
 
 
 
-      $this->call('composer:AddLocal',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
+      $this->call('composer:add-local',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
 
 
 
