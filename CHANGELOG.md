@@ -2,6 +2,18 @@
 
 All notable changes to `work-with-composer` will be documented in this file.
 
+## 0.7 - 2026-09-17
+
+### What's Changed
+
+* Status Command by @tobya in https://github.com/tobya/work-with-composer/pull/4
+
+### New Contributors
+
+* @tobya made their first contribution in https://github.com/tobya/work-with-composer/pull/4
+
+**Full Changelog**: https://github.com/tobya/work-with-composer/compare/0.6...0.7
+
 ## 0.6 - 2026-09-12
 
 **Full Changelog**: https://github.com/tobya/work-with-composer/compare/v0.5...0.6
