@@ -28,9 +28,27 @@ php artisan vendor:publish --tag="work-with-composer-config"
 Add a new local repository
 ```php
 
-php artisan composer:add-local
+$ php artisan composer:add-local
+
+  Package Name eg. tobya/QueueStatus:
+❯ tobya/queuestatus
+
+  Full Local Directory Path:
+❯ C:\Development\github\queuestatus
+
+All done - Local Repo for tobya/queuestatus has been created.
+Don't forget to composer require your package
+Composer require tobya/queuestatus
+
+ Do you wish to run it now? (yes/no) [no]:
+ > yes
+
+./composer.json has been updated
+Running composer update tobya/queuestatus
+Loading composer repositories with package information
 
 ```
+
 
 Restore a repository to the production version before publishing your app.
 ```php
