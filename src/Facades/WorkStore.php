@@ -5,7 +5,7 @@
   use Illuminate\Support\Facades\Facade;
   use Tobya\WorkWithComposer\Services\WorkStoreService;
 
-  class Store extends Facade
+  class WorkStore extends Facade
   {
     protected static function getFacadeAccessor(): string
     {

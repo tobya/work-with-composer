@@ -4,7 +4,7 @@
 
   use Illuminate\Console\Command;
   use Illuminate\Support\Facades\Artisan;
-  use Tobya\WorkWithComposer\Facades\Store;
+  use Tobya\WorkWithComposer\Facades\WorkStore;
 
   class RestoreRepositoryCommand extends Command
   {
@@ -14,12 +14,12 @@
 
     public function handle(): void
     {
-      $list = Store::RepositoryList();
+      $list = WorkStore::RepositoryList();
 
 
       $reponame = $this->choice('Which repository do you want to restore?', $list->toArray());
 
-      $repoInfo = Store::Repository($reponame);
+      $repoInfo = WorkStore::Repository($reponame);
 
 
 

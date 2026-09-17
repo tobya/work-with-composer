@@ -5,11 +5,11 @@
   use Illuminate\Console\Command;
   use Tobya\WorkWithComposer\Facades\WorkStore;
 
-  class ListRepositoriesCommand extends Command
+  class StatusCommand extends Command
   {
-    protected $signature = 'composer:local-list';
+    protected $signature = 'composer:status';
 
-    protected $description = 'List All local repositories Available';
+    protected $description = 'List All local and production repositories Available';
 
     public function handle(): void
     {
