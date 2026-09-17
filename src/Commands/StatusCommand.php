@@ -3,6 +3,7 @@
   namespace Tobya\WorkWithComposer\Commands;
 
   use Illuminate\Console\Command;
+  use Tobya\WorkWithComposer\Facades\Composer;
   use Tobya\WorkWithComposer\Facades\WorkStore;
 
   class StatusCommand extends Command
@@ -15,9 +16,24 @@
     {
       $list = WorkStore::RepositoryList();
 
+      $table = [];
       foreach ($list as $repo) {
-        $this->info($repo);
+          $table[] = [$repo,  'work-with-composer:local'];
       }
+      
+      $this->table(['Name',  'Type'], $table);
+
+      $localRepoList = Composer::RepositoryList();
+
+      $table = [];
+      foreach ($localRepoList as $repo) {
+          $table[] = [$repo,  'composer:custom-repo'];
+        //$this->info($repo);
+      }
+      $this->table(['Name',  'Type'], $table);
+
+
+
 
       $this->comment('End of Repositories Available');
 
