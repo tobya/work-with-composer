@@ -3,17 +3,17 @@
   namespace Tobya\WorkWithComposer\Commands;
 
   use Illuminate\Console\Command;
-  use Tobya\WorkWithComposer\Facades\Store;
+  use Tobya\WorkWithComposer\Facades\WorkStore;
 
   class ListRepositoriesCommand extends Command
   {
-    protected $signature = 'composer:local-list';
+    protected $signature = 'composer:list-local';
 
-    protected $description = 'List All local and Remote repositories Available';
+    protected $description = 'List All local repositories Available';
 
     public function handle(): void
     {
-      $list = Store::RepositoryList();
+      $list = WorkStore::RepositoryList();
 
       foreach ($list as $repo) {
         $this->info($repo);

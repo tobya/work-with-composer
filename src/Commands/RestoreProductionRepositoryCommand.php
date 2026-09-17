@@ -5,7 +5,7 @@
   use Illuminate\Console\Command;
   use Illuminate\Support\Facades\Artisan;
   use Illuminate\Support\Facades\Process;
-  use Tobya\WorkWithComposer\Facades\Store;
+  use Tobya\WorkWithComposer\Facades\WorkStore;
   use Tobya\WorkWithComposer\Facades\Composer;
 
   class RestoreProductionRepositoryCommand extends Command
@@ -16,13 +16,13 @@
 
     public function handle(): void
     {
-      $list = Store::RepositoryList();
+      $list = WorkStore::RepositoryList();
 
 
       $reponame = $this->choice('Which repository do you want to restore?', $list->toArray());
     //  echo "\n $repoindex\n ====================== \n";
     //  $reponame = $list[$repoindex];
-      $repoInfo = Store::Repository($reponame);
+      $repoInfo = WorkStore::Repository($reponame);
 
       $productionInfo = $repoInfo['production'];
 

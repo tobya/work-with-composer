@@ -3,6 +3,7 @@
 namespace Tobya\WorkWithComposer;
 
 use Spatie\LaravelPackageTools\Package;
+use Tobya\WorkWithComposer\Commands\StatusCommand;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Tobya\WorkWithComposer\Commands\AddCommentCommand;
 use Tobya\WorkWithComposer\Commands\AddLocalRepoCommand;
@@ -30,6 +31,7 @@ class WorkWithComposerServiceProvider extends PackageServiceProvider
                 ListRepositoriesCommand::class,
                 RestoreRepositoryCommand::class,
                 RestoreProductionRepositoryCommand::class,
+                StatusCommand::class,
             ]);
     }
 }

@@ -4,7 +4,7 @@
 
   use Illuminate\Console\Command;
   use Illuminate\Support\Facades\Process;
-  use Tobya\WorkWithComposer\Facades\Store;
+  use Tobya\WorkWithComposer\Facades\WorkStore;
   use Tobya\WorkWithComposer\Facades\LocalStore;
   use Symfony\Component\Console\Input\InputInterface;
   use Symfony\Component\Console\Output\OutputInterface;
