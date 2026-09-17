@@ -20,7 +20,7 @@
       foreach ($list as $repo) {
           $table[] = [$repo,  'work-with-composer:local'];
       }
-      
+
       $this->table(['Name',  'Type'], $table);
 
       $localRepoList = Composer::RepositoryList();
