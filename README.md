@@ -53,7 +53,21 @@ Loading composer repositories with package information
 Restore a repository to the production version before publishing your app.
 ```php
 
-php artisan composer:restore-production
+ php artisan composer:restore-production
+
+ Which repository do you want to restore?:
+  [0] tobya/work-with-composer
+  [1] tobya/bcsapiwrapper
+  [2] tobya/queuestatus
+ > 2
+2
+
+Repository restored: tobya/queuestatus dev-main
+Don't forget to composer require your package
+Composer require tobya/queuestatus
+
+ Do you wish to run composer require now? (yes/no) [no]:
+ > 
 
 ```
 
@@ -61,6 +75,20 @@ Restore a previously set up local repository for development
 ```php
 
 php artisan composer:restore-local
+
+ Which repository do you want to restore?:
+  [0] tobya/work-with-composer
+  [1] tobya/bcsapiwrapper
+  [2] tobya/queuestatus
+ > 0
+0
+
+All done - Local Repo for tobya/work-with-composer has been created.
+Don't forget to composer require your package
+Composer require tobya/work-with-composer
+
+ Do you wish to run it now? (yes/no) [no]:
+ > yes
 
 ```
 
