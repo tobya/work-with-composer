@@ -22,6 +22,12 @@ You can publish the config file with:
 php artisan vendor:publish --tag="work-with-composer-config"
 ```
 
+Ideally .gitignore your work-with-composer.json file, as this will be different on each dev machine.
+
+````
+# .gitignore
+work-with-composer.json
+````
 
 ## Usage
 
