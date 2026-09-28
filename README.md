@@ -103,10 +103,20 @@ Composer require tobya/work-with-composer
 
 > php artisan composer:list-local 
 
+## Composer Errors
+
+Sometimes things get out of whak and you will get an error from composer saying everyign is skew ways.  Thsi can 
+usually be fixed very easily with `composer update`
+
 ## Notes
+
+Work with Composer modifies your composer.json file.  It does this by reading, modifiying and writing the file. 
+Unfortunately this does not preserve with space etc.  If you do not like something messing with your composer.json file
+you probably shouldnt use this package.
 
 The package stores the version of a package that was set when the local version is provided.
 When restored this 'last_known_version' is restored.
+
 
 ## Testing
 
