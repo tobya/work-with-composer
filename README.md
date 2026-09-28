@@ -31,7 +31,8 @@ work-with-composer.json
 
 ## Usage
 
-Add a new local repository
+### Add a new local repository
+
 ```php
 
 $ php artisan composer:add-local
@@ -56,7 +57,7 @@ Loading composer repositories with package information
 ```
 
 
-Restore a repository to the production version before publishing your app.
+### Restore a repository to the production version before publishing your app.
 ```php
 
  php artisan composer:restore-production
@@ -77,7 +78,7 @@ Composer require tobya/queuestatus
 
 ```
 
-Restore a previously set up local repository for development
+### Restore a previously set up local repository for development
 ```php
 
 php artisan composer:restore-local
@@ -97,6 +98,10 @@ Composer require tobya/work-with-composer
  > yes
 
 ```
+
+### List all Local Repositories
+
+> php artisan composer:list-local 
 
 ## Notes
 
