@@ -14,6 +14,9 @@
       public function RepositoryList() : Collection
       {
 
+          if ( ! isset($this->data['repositories'])){
+              return collect();
+          }
 
           $list = [];
           foreach($this->data['repositories'] as $repoName => $repository){
