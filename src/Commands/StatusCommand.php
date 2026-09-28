@@ -8,7 +8,7 @@
 
   class StatusCommand extends Command
   {
-    protected $signature = 'composer:status';
+    protected $signature = 'wwcomposer:status';
 
     protected $description = 'List All local and production repositories Available';
 
@@ -18,19 +18,19 @@
 
       $table = [];
       foreach ($list as $repo) {
-          $table[] = [$repo,  'work-with-composer:local'];
+          $table[] = [$repo,  'work-with-composer' ,'local'];
       }
 
-      $this->table(['Name',  'Type'], $table);
+      $this->table(['Name', 'File', 'Type'], $table);
 
       $localRepoList = Composer::RepositoryList();
 
       $table = [];
       foreach ($localRepoList as $repo) {
-          $table[] = [$repo,  'composer:custom-repo'];
+          $table[] = [$repo,  'composer','custom-repo'];
         //$this->info($repo);
       }
-      $this->table(['Name',  'Type'], $table);
+      $this->table(['Name','File' , 'Type'], $table);
 
 
 
