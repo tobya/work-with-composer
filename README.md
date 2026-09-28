@@ -35,7 +35,7 @@ work-with-composer.json
 
 ```php
 
-$ php artisan composer:add-local
+$ php artisan wwcomposer:add-local
 
   Package Name eg. tobya/QueueStatus:
 ❯ tobya/queuestatus
@@ -60,7 +60,7 @@ Loading composer repositories with package information
 ### Restore a repository to the production version before publishing your app.
 ```php
 
- php artisan composer:restore-production
+ php artisan wwcomposer:restore-production
 
  Which repository do you want to restore?:
   [0] tobya/work-with-composer
@@ -81,7 +81,7 @@ Composer require tobya/queuestatus
 ### Restore a previously set up local repository for development
 ```php
 
-php artisan composer:restore-local
+php artisan wwcomposer:restore-local
 
  Which repository do you want to restore?:
   [0] tobya/work-with-composer
@@ -101,7 +101,7 @@ Composer require tobya/work-with-composer
 
 ### List all Local Repositories
 
-> php artisan composer:list-local 
+> php artisan wwcomposer:list-local 
 
 ## Composer Errors
 

@@ -7,7 +7,7 @@
 
   class AddCommentCommand extends Command
   {
-    protected $signature = 'composer:comment
+    protected $signature = 'wwcomposer:comment
 
                             {name : Name of the comment}
                             {comment}
@@ -23,7 +23,7 @@
         $name = $this->argument('name');
         $name  .=   ($this->option('addpostfix')?  '_comment' :'_no');
 
-        Composer::set("$name",$comment);
+        composer::set("$name",$comment);
 
     }
   }

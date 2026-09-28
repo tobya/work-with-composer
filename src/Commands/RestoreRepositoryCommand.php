@@ -8,7 +8,7 @@
 
   class RestoreRepositoryCommand extends Command
   {
-    protected $signature = 'composer:restore-local';
+    protected $signature = 'wwcomposer:restore-local';
 
     protected $description = 'Creates a linked repository entry in composer.json from info in work-with-composer.json';
 
@@ -23,7 +23,7 @@
 
 
 
-      $this->call('composer:add-local',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
+      $this->call('wwcomposer:add-local',['package' => $reponame,'fullpath' => $repoInfo['local']['url'], '--no-interaction']);
 
 
 
