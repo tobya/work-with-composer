@@ -7,7 +7,7 @@
 
   class ListRepositoriesCommand extends Command
   {
-    protected $signature = 'composer:list-local';
+    protected $signature = 'wwcomposer:list-local';
 
     protected $description = 'List All local repositories Available';
 

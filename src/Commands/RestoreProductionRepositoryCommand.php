@@ -10,7 +10,7 @@
 
   class RestoreProductionRepositoryCommand extends Command
   {
-    protected $signature = 'composer:restore-production';
+    protected $signature = 'wwcomposer:restore-production';
 
     protected $description = 'Restore a production repository';
 
