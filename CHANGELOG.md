@@ -2,6 +2,18 @@
 
 All notable changes to `work-with-composer` will be documented in this file.
 
+## 0.8.2 - 2026-09-28
+
+**Full Changelog**: https://github.com/tobya/work-with-composer/compare/0.8.1...0.8.2
+
+## 0.8.1 - 2026-09-28
+
+### What's Changed
+
+* Change Command names to wwcomposer by @tobya in https://github.com/tobya/work-with-composer/pull/5
+
+**Full Changelog**: https://github.com/tobya/work-with-composer/compare/0.7...0.8.1
+
 ## 0.8 - 2026-09-28
 
 ### What's Changed
