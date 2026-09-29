@@ -2,6 +2,10 @@
 
 All notable changes to `work-with-composer` will be documented in this file.
 
+## 0.8.3 - 2026-09-29
+
+**Full Changelog**: https://github.com/tobya/work-with-composer/compare/0.8.2...0.8.3
+
 ## 0.8.2 - 2026-09-28
 
 **Full Changelog**: https://github.com/tobya/work-with-composer/compare/0.8.1...0.8.2
