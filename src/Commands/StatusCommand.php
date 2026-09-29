@@ -30,11 +30,9 @@
           $table[] = [$repo,  'composer','custom-repo'];
         //$this->info($repo);
       }
+
       $this->comment('composer.json Custom Respositories');
       $this->table(['Name', 'File',  'Type'], $table);
-
-
-
 
       $this->comment('End of Repositories Available');
 
