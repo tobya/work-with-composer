@@ -105,17 +105,21 @@ Composer require tobya/work-with-composer
 
 ## Composer Errors
 
-Sometimes things get out of whak and you will get an error from composer saying everyign is skew ways.  Thsi can 
-usually be fixed very easily with `composer update`
+Sometimes things get out of whack and you will get an error from composer saying everything is skew ways.  This can 
+usually be fixed very easily by taking a step back and running `composer update`
 
 ## Notes
 
-Work with Composer modifies your composer.json file.  It does this by reading, modifiying and writing the file. 
-Unfortunately this does not preserve with space etc.  If you do not like something messing with your composer.json file
-you probably shouldnt use this package.
+Work with Composer modifies your composer.json file.  It does this by reading, modifying and writing the file. 
+Unfortunately this does not preserve white space etc.  If you do not like something messing with your composer.json file
+you probably shouldn't use this package.
 
 The package stores the version of a package that was set when the local version is provided.
 When restored this 'last_known_version' is restored.
+
+## Contributions
+
+I have found this package very helpful to allow me to quickly attach and detach a development package to an app I am developing in tandem with it.  The package is in development and I am slowly adding the bits that make sense for me.  I would be delighted in feedback in the form of issues or help in the form of PRs. We could make wwcomposer the standard for laravel based composer manipulation. 
 
 
 ## Testing
